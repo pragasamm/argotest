@@ -2,6 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: check-sa-annotation-job
+  annotations: 
+    argocd.argoproj.io/hook: PreSync
 spec:
   template:
     spec:
