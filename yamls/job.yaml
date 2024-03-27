@@ -12,4 +12,5 @@ spec:
         image: docker-dev-artifactory.workday.com/scylla-silver/kubectl:1.19.2.0
         command: ["/bin/sh", "-c", " if kubectl get serviceaccount testserviceacc -n default -o=jsonpath='{.metadata.annotations.tstana}' | grep -q available; then exit 0; else exit 1; fi"]
       restartPolicy: OnFailure
+      initialDelaySeconds: 10
   backoffLimit: 3
